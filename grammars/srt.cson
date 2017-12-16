@@ -1,0 +1,170 @@
+name: 'SubRip Text'
+scopeName: 'source.srt'
+fileTypes: [
+	'srt'
+]
+
+patterns: [
+	{
+		include: '#subtitle'
+	}
+]
+
+repository:
+
+	subtitle:
+		name: 'meta.subtitle.srt'
+		begin: '\\b\\d+$'
+		beginCaptures:
+			0:	name: 'entity.name.section.srt'
+		end: '^\\s*$'
+		patterns: [
+			{
+				include: '#time'
+			}
+			{
+				include: '#sound'
+			}
+			{
+				include: '#person'
+			}
+			{
+				include: '#bold'
+			}
+			{
+				include: '#italic'
+			}
+			{
+				include: '#underline'
+			}
+			{
+				include: '#font'
+			}
+		]
+
+	time:
+		match: '^(\\d{2})(:)(\\d{2})(:)(\\d{2})(,)(\\d{3})\\s*(-->)\\s*(\\d{2})(:)(\\d{2})(:)(\\d{2})(,)(\\d{3})$'
+		captures:
+			1: 	name: 'constant.numeric.time.hours.srt'
+			2:	name: 'punctuation.definition.separator.srt'
+			3:	name: 'constant.numeric.time.minutes.srt'
+			4:	name: 'punctuation.definition.separator.srt'
+			5:	name: 'constant.numeric.time.seconds.srt'
+			6:	name: 'punctuation.definition.separator.srt'
+			7:	name: 'constant.numeric.time.milliseconds.srt'
+			8:	name: 'punctuation.definition.separator.srt'
+			9: 	name: 'constant.numeric.time.hours.srt'
+			10:	name: 'punctuation.definition.separator.srt'
+			11:	name: 'constant.numeric.time.minutes.srt'
+			12:	name: 'punctuation.definition.separator.srt'
+			13:	name: 'constant.numeric.time.seconds.srt'
+			14:	name: 'punctuation.definition.separator.srt'
+			15:	name: 'constant.numeric.time.milliseconds.srt'
+
+	sound:
+		name: 'string.quoted.other.sound.srt'
+		match: '\\[.*?\\]|\\(.*?\\)'
+
+	person:
+		name: 'entity.name.tag.srt'
+		match: '^\\w+:'
+
+	bold:
+		name: 'markup.bold.srt'
+		begin: '(?i)<b>'
+		end: '(?i)</b>'
+		patterns: [
+			{
+				include: '#sound'
+			}
+			{
+				include: '#person'
+			}
+			{
+				include: '#bold'
+			}
+			{
+				include: '#italic'
+			}
+			{
+				include: '#underline'
+			}
+			{
+				include: '#font'
+			}
+		]
+
+	italic:
+		name: 'markup.italic.srt'
+		begin: '(?i)<i>'
+		end: '(?i)</i>'
+		patterns: [
+			{
+				include: '#sound'
+			}
+			{
+				include: '#person'
+			}
+			{
+				include: '#bold'
+			}
+			{
+				include: '#italic'
+			}
+			{
+				include: '#underline'
+			}
+			{
+				include: '#font'
+			}
+		]
+
+	underline:
+		name: 'markup.underline.srt'
+		begin: '(?i)<u>'
+		end: '(?i)</u>'
+		patterns: [
+			{
+				include: '#sound'
+			}
+			{
+				include: '#person'
+			}
+			{
+				include: '#bold'
+			}
+			{
+				include: '#italic'
+			}
+			{
+				include: '#underline'
+			}
+			{
+				include: '#font'
+			}
+		]
+
+	font:
+		name: 'markup.link.font.srt'
+		begin: '(?i)<font\\b.*?>'
+		end: '(?i)</font>'
+		patterns: [
+			{
+				include: '#sound'
+			}
+			{
+				include: '#person'
+			}
+			{
+				include: '#bold'
+			}
+			{
+				include: '#italic'
+			}
+			{
+				include: '#underline'
+			}
+			{
+				include: '#font'
+			}
+		]

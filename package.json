@@ -1,0 +1,22 @@
+{
+  "name": "language-subriptext",
+  "version": "0.0.0",
+  "description": "Syntax highlighting for SubRip Text (.srt subtitle file format) in Atom",
+  "keywords": [
+    "language",
+    "srt",
+    "subtitle",
+    "subriptext"
+  ],
+  "engines": {
+    "atom": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m-paolino/atom-package-language-subriptext.git"
+  },
+  "bugs": {
+    "url": "https://github.com/m-paolino/atom-package-language-subriptext/issues"
+  },
+  "license": "MIT"
+}

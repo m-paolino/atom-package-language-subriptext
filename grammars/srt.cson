@@ -17,7 +17,7 @@
 		'begin': '\\b\\d+$'
 		'beginCaptures':
 			'0':
-				'name': 'entity.name.section.srt'
+				'name': 'markup.heading.srt'
 		'end': '^\\s*$'
 		'patterns': [
 			{
@@ -61,7 +61,7 @@
 			'7':
 				'name': 'constant.numeric.time.milliseconds.srt'
 			'8':
-				'name': 'punctuation.definition.separator.srt'
+				'name': 'support.function.separator.srt'
 			'9':
 				'name': 'constant.numeric.time.hours.srt'
 			'10':

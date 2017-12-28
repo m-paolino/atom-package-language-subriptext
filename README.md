@@ -2,6 +2,15 @@
 
 Syntax Highlighting Package for SubRip Text `.srt` files in [Atom](https://atom.io).
 
+![apm](https://img.shields.io/apm/v/language-subriptext.svg)
+![apm](https://img.shields.io/apm/dm/language-subriptext.svg)
+
+## Installation
+
+Install `language-subriptext` via either:
+-   your terminal: `apm install language-subriptext`
+-   the Atom GUI: `Atom` > `Settings` > `Install` > Search for `language-subriptext`
+
 ## What is an *SRT file*?
 
 An `SRT` file is a subtitle file saved in the SubRip file format. It is supported by several video formats such as DivX and DVD and used by various video playback programs. SRT files contain subtitle information, which includes the sequential number of subtitles, start and end timecode, subtitle text.
